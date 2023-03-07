@@ -107,6 +107,7 @@ form {
     line-height: 24px;
     padding: 7px 16px;
     border: 1px solid #000;
+    background-color: #FFF;
     color: #000;
     border-radius: 3px;
 
