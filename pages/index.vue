@@ -105,8 +105,14 @@ form {
     width: 100%;
     font-size: 16px;
     line-height: 24px;
-    padding: 8px 16px;
+    padding: 7px 16px;
     border: 1px solid #000;
+    color: #000;
+    border-radius: 3px;
+
+    @media (max-width: 640px) {
+        padding: 11px 16px;
+    }
 }
 
 hr {
