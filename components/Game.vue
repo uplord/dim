@@ -130,6 +130,7 @@ export default {
                     this.frame = 'egg'
                 } else {
                     if (this.prev_digimon < val) {
+                        console.log(222)
                         this.frame = 'wallpaper'
                     } else {
                         this.frame = 'default'
@@ -256,7 +257,7 @@ export default {
 
         <form>
 
-        <div class="button-group" v-if="digimon.images">
+        <div class="button-group" v-if="digimon.images && frame != 'wallpaper'">
             <div class="button" @click="frame = 'default'" :class="{'active': frame == 'default'}" v-if="digimon.images.default">Default</div>
             <div class="button" @click="frame = 'walk'" :class="{'active': frame == 'walk'}" v-if="digimon.images.walk">Walk</div>
             <div class="button" @click="frame = 'run'" :class="{'active': frame == 'run'}" v-if="digimon.images.run">Run</div>
@@ -264,12 +265,11 @@ export default {
             <div class="button" @click="frame = 'happy'" :class="{'active': frame == 'happy'}" v-if="digimon.images.happy">Happy</div>
             <div class="button" @click="frame = 'sleep'" :class="{'active': frame == 'sleep'}" v-if="digimon.images.sleep">Sleep</div>
             <div class="button" @click="frame = 'attack'" :class="{'active': frame == 'attack'}" v-if="digimon.images.attack">Attack</div>
-            <div class="button" @click="frame = 'wallpaper'" :class="{'active': frame == 'wallpaper'}" v-if="digimon.images.wallpaper">Wallpaper</div>
 
-            <div class="button" @click="frame = 'hatch'" v-if="digimon.images.hatching">Hatch</div>
+            <div class="button" @click="frame = 'hatch'" v-if="digimon.images.hatching && frame != 'hatch'">Hatch</div>
         </div>
 
-        <div class="button-group" v-if="frame != 'hatch' && frame != 'egg'">
+        <div class="button-group" v-if="frame != 'hatch' && frame != 'egg' && frame != 'wallpaper'">
             <div class="button" @click="current_digimon--" v-if="frame != 'hatch' && frame != 'egg'">Down</div>
             <div class="button" @click="current_digimon++" v-if="current_digimon + 1 < dim.length && frame != 'hatch' && frame != 'egg'">Up</div>
         </div>
