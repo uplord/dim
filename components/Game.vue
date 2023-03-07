@@ -246,7 +246,7 @@ export default {
             <div v-if="digimon.stage != 'Egg'"><b>Stage</b>: {{ digimon.stage }}</div>
             <div v-if="digimon.attribute"><b>Attribute</b>: {{ digimon.attribute }}</div>
             <div v-if="digimon.activity_type"><b>Activity Type</b>: {{ digimon.activity_type }}</div>
-            <div class="" v-if="digimon.stats">
+            <div class="" v-if="digimon.stats && digimon.stats.hp != 0">
                 <div><b>Stats</b></div>
                 <div>HP: {{ digimon.stats.hp }}</div>
                 <div>BP: {{ digimon.stats.bp }}</div>
