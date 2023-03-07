@@ -65,11 +65,19 @@ form {
 }
 
 .button {
+    font-size: 14px;
+    line-height: 40px;
     -webkit-appearance: none;
     display: inline-flex;
     background: #000;
     color: #FFF;
-    padding: 8px 16px;
+    padding: 0 24px;
+    border-radius: 3px;
+
+    @media (max-width: 640px) {
+        font-size: 16px;
+        line-height: 48px;
+    }
 
     &.active {
         background: red;
