@@ -38,11 +38,12 @@ export default {
             clearTimeout(this.timer)
 
             this.frame = 'egg'
+            this.images = []
+            this.digimon = {}
             
             axios
                 .get('../json/' + this.dim_card + '.json')
                 .then(response => {
-                    this.images = []
                     this.dim = response.data
 
                     // Load all images
