@@ -196,7 +196,7 @@ export default {
             <div class="button-group" v-if="digimon.images">
                 <button type="button" class="button" @click="frame = 'hatch'" v-if="digimon.images && digimon.images.hatching && (frame == 'hatch' || frame == 'egg')" :disabled="frame == 'hatch'">Hatch</button>
                 <button type="button" class="button" @click="current_digimon--" v-if="frame != 'hatch' && frame != 'egg'" :disabled="frame == 'wallpaper'">Down</button>
-                <button type="button" class="button" @click="current_digimon++" v-if="current_digimon + 1 < dim.length && frame != 'hatch' && frame != 'egg'" :disabled="frame == 'wallpaper'">Up</button>
+                <button type="button" class="button right" @click="current_digimon++" v-if="current_digimon + 1 < dim.length && frame != 'hatch' && frame != 'egg'" :disabled="frame == 'wallpaper'">Up</button>
             </div>
 
             <hr>

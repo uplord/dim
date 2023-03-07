@@ -81,6 +81,10 @@ form {
         line-height: 48px;
     }
 
+    &.right {
+        margin-left: auto;
+    }
+
     &.active {
         background: red;
     }
