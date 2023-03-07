@@ -5,13 +5,14 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            frame: 'default',
+            frame: 'egg',
             dim: [],
             all_dims: [],
             dim_card: 'dinosaur-roar',
             digimon: {},
-            current_digimon: 13,
-            prev_digimon: ''
+            current_digimon: 0,
+            prev_digimon: '',
+            images: {}
         }
     },
     computed: {
@@ -36,6 +37,67 @@ export default {
                 .then(response => {
                     this.dim = response.data
 
+                    // Load all images
+
+                    for (let i = 0; i < this.dim.length; i++) {
+                        const images = {}
+
+                        if (this.dim[i].images.default) {
+                            images.default_1 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.default[0])
+                            images.default_2 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.default[1])
+                        }
+
+                        if (this.dim[i].images.walk) {
+                            images.walk_1 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.walk[0])
+                            if (this.dim[i].images.walk[1]) {
+                                images.walk_2 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.walk[1])
+                            }
+                        }
+
+                        if (this.dim[i].images.run) {
+                            images.run_1 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.run[0])
+                            images.run_2 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.run[1])
+                        }
+
+                        if (this.dim[i].images.train) {
+                            images.train_1 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.train[0])
+                            images.train_2 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.train[1])
+                        }
+
+                        if (this.dim[i].images.happy) {
+                            images.happy = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.happy[0])
+                        }
+
+                        if (this.dim[i].images.sleep) {
+                            images.sleep = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.sleep[0])
+                        }
+
+                        if (this.dim[i].images.attack) {
+                            images.attack_1 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.attack[0])
+                            images.attack_2 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.attack[1])
+                        }
+
+                        if (this.dim[i].images.wallpaper) {
+                            images.wallpaper = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.wallpaper[0])
+                        }
+
+                        if (this.dim[i].images.hatching) {
+                            images.hatch_1 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.hatching[0])
+                            images.hatch_2 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.hatching[1])
+                            images.hatch_3 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.hatching[2])
+                            images.hatch_4 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.hatching[3])
+                            images.hatch_5 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.hatching[4])
+                            images.hatch_6 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.hatching[5])
+                            images.hatch_7 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.hatching[6])
+                            images.hatch_8 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.hatching[7])
+                        }
+
+                        if (images) {
+                            this.images[i] = images
+                        }
+                    }
+
+                    // Load Digimon
                     this.loadDigimon()
                 })
         },
@@ -44,6 +106,32 @@ export default {
             if (this.digimon.images.wallpaper == undefined && this.current_digimon == 1) {
                 this.frame = 'default'
             }
+
+            /*
+            this.images.default_1 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.default[0])
+            this.images.default_2 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.default[1])
+
+            this.images.walk_1 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.walk[0])
+            this.images.walk_2 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.walk[1])
+
+            this.images.run_1 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.run[0])
+            this.images.run_2 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.run[1])
+
+            this.images.train_1 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.train[0])
+            this.images.train_2 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.train[1])
+
+            this.images.happy = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.happy[0])
+            this.images.sleep = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.sleep[0])
+            this.images.attack_1 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.attack[0])
+            this.images.attack_2 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.attack[1])
+
+            this.images.wallpaper = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.wallpaper[0])
+            */
+        },
+        newImage: function (url) {
+            const image = new Image()
+            image.src = url
+            return image;
         }
     },
     watch: {
@@ -109,46 +197,48 @@ export default {
             <img :src="'../images/' + dim_card + '/DIM_1_.PNG'" alt="" />
 
             <div class="digimon default" v-if="frame == 'default' && digimon.images.default">
-                <img :src="'../images/' + dim_card + '/' + digimon.images.default[0]" alt="" class="frame1" />
-                <img :src="'../images/' + dim_card + '/' + digimon.images.default[1]" alt="" class="frame2" v-if="digimon.images.default[1]" />
+                <img :src="images[current_digimon].default_1.src" alt="" class="frame1" />
+                <img :src="images[current_digimon].default_2.src" alt="" class="frame2" v-if="digimon.images.default[1]" />
             </div>
+
             <div class="digimon walk" v-if="frame == 'walk' && digimon.images.walk">
-                <img :src="'../images/' + dim_card + '/' + digimon.images.walk[0]" alt="" :class="{ 'frame1': digimon.images.walk[1] }" />
-                <img :src="'../images/' + dim_card + '/' + digimon.images.walk[1]" alt="" class="frame2" v-if="digimon.images.walk[1]" />
+                <img :src="images[current_digimon].walk_1.src" alt="" :class="{ 'frame1': digimon.images.walk[1] }" />
+                <img :src="images[current_digimon].walk_2.src" alt="" class="frame2" v-if="digimon.images.walk[1]" />
             </div>
             <div class="digimon run" v-if="frame == 'run' && digimon.images.run">
-                <img :src="'../images/' + dim_card + '/' + digimon.images.run[0]" alt="" :class="{ 'frame1': digimon.images.run[1] }" />
-                <img :src="'../images/' + dim_card + '/' + digimon.images.run[1]" alt="" class="frame2" v-if="digimon.images.run[1]" />
+                <img :src="images[current_digimon].run_1.src" alt="" :class="{ 'frame1': digimon.images.run[1] }" />
+                <img :src="images[current_digimon].run_2.src" alt="" class="frame2" v-if="digimon.images.run[1]" />
             </div>
             <div class="digimon train" v-if="frame == 'train' && digimon.images.train">
-                <img :src="'../images/' + dim_card + '/' + digimon.images.train[0]" alt="" class="frame1" />
-                <img :src="'../images/' + dim_card + '/' + digimon.images.train[1]" alt="" class="frame2" v-if="digimon.images.train[1]" />
+                <img :src="images[current_digimon].train_1.src" alt="" class="frame1" />
+                <img :src="images[current_digimon].train_2.src" alt="" class="frame2" v-if="digimon.images.train[1]" />
             </div>
             <div class="digimon happy" v-if="frame == 'happy' && digimon.images.happy">
-                <img :src="'../images/' + dim_card + '/' + digimon.images.happy[0]" alt="" />
+                <img :src="images[current_digimon].happy.src" alt="" />
             </div>
             <div class="digimon sleep" v-if="frame == 'sleep' && digimon.images.sleep">
-                <img :src="'../images/' + dim_card + '/' + digimon.images.sleep[0]" alt="" />
+                <img :src="images[current_digimon].sleep.src" alt="" />
             </div>
             <div class="digimon attack" v-if="frame == 'attack' && digimon.images.attack">
-                <img :src="'../images/' + dim_card + '/' + digimon.images.attack[0]" alt="" class="frame1" />
-                <img :src="'../images/' + dim_card + '/' + digimon.images.attack[1]" alt="" class="frame2" v-if="digimon.images.attack[1]" />
+                <img :src="images[current_digimon].attack_1.src" alt="" class="frame1" />
+                <img :src="images[current_digimon].attack_2.src" alt="" class="frame2" v-if="digimon.images.attack[1]" />
             </div>
 
             <div class="digimon hatch" v-if="(frame == 'egg' || frame == 'hatch') && digimon.images.hatching" :class="{'start': frame == 'hatch'}">
-                <img :src="'../images/' + dim_card + '/' + digimon.images.hatching[0]" alt="" class="frame1" />
-                <img :src="'../images/' + dim_card + '/' + digimon.images.hatching[1]" alt="" class="frame2" />
-                <img :src="'../images/' + dim_card + '/' + digimon.images.hatching[2]" alt="" class="frame3" />
-                <img :src="'../images/' + dim_card + '/' + digimon.images.hatching[3]" alt="" class="frame4" />
-                <img :src="'../images/' + dim_card + '/' + digimon.images.hatching[4]" alt="" class="frame5" />
-                <img :src="'../images/' + dim_card + '/' + digimon.images.hatching[5]" alt="" class="frame6" />
-                <img :src="'../images/' + dim_card + '/' + digimon.images.hatching[6]" alt="" class="frame7" />
-                <img :src="'../images/' + dim_card + '/' + digimon.images.hatching[7]" alt="" class="frame8" />
+                <img :src="images[current_digimon].hatch_1.src" alt="" class="frame1" />
+                <img :src="images[current_digimon].hatch_2.src" alt="" class="frame2" />
+                <img :src="images[current_digimon].hatch_3.src" alt="" class="frame3" />
+                <img :src="images[current_digimon].hatch_4.src" alt="" class="frame4" />
+                <img :src="images[current_digimon].hatch_5.src" alt="" class="frame5" />
+                <img :src="images[current_digimon].hatch_6.src" alt="" class="frame6" />
+                <img :src="images[current_digimon].hatch_7.src" alt="" class="frame7" />
+                <img :src="images[current_digimon].hatch_8.src" alt="" class="frame8" />
             </div>
 
             <div class="wallpaper" v-if="frame == 'wallpaper' && digimon.images.wallpaper">
-                <img :src="'../images/' + dim_card + '/' + digimon.images.wallpaper[0]" alt="" />
+                <img :src="images[current_digimon].wallpaper.src" alt="" />
             </div>
+            
         </div>
 
         <div class="info">
