@@ -13,7 +13,8 @@ export default {
             current_digimon: 0,
             prev_digimon: '',
             images: {},
-            wallpaper: ''
+            wallpaper: '',
+            timer: ''
         }
     },
     computed: {
@@ -33,6 +34,10 @@ export default {
     methods: {
 
         async loadDim() {
+
+            clearTimeout(this.timer)
+
+            this.frame = 'egg'
             
             axios
                 .get('../json/' + this.dim_card + '.json')
@@ -148,23 +153,23 @@ export default {
                 var vm = this
 
                 if (val == 'hatch') {
-                    setTimeout(function() {
+                    vm.timer = setTimeout(function() {
                         vm.current_digimon++
-                    }, 2000);
+                    }, 1500);
                 } else if (val == 'happy') {
-                    setTimeout(function() {
+                    vm.timer = setTimeout(function() {
                         vm.frame = 'default'
                     }, 500);
                 } else if (val == 'train') {
-                    setTimeout(function() {
+                    vm.timer = setTimeout(function() {
                         vm.frame = 'default'
                     }, 1000);
                 } else if (val == 'attack') {
-                    setTimeout(function() {
+                    vm.timer = setTimeout(function() {
                         vm.frame = 'default'
                     }, 1000);
                 } else if (val == 'wallpaper') {
-                    setTimeout(function() {
+                    vm.timer = setTimeout(function() {
                         vm.frame = 'default'
                     }, 1000);
                 }
