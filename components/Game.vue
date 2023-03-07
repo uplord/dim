@@ -7,6 +7,7 @@ export default {
         return {
             frame: 'default',
             dim: [],
+            all_dims: [],
             dim_card: 'dinosaur-roar',
             digimon: {},
             current_digimon: 13,
@@ -18,6 +19,12 @@ export default {
     },
     mounted() {
         this.loadDim()
+
+        axios
+            .get('../dims.json')
+            .then(response => {
+                this.all_dims = response.data
+            })
     },
     updated() {
     },
@@ -146,16 +153,15 @@ export default {
 
         <div class="info">
             <div><b>{{ digimon.name }}</b></div>
-            <div>{{ dim_card.replace('-', ' ').replace(/(^\w|\s\w)/g, m => m.toUpperCase()) }}</div>
-            <div v-if="digimon.stage != 'Egg'">Stage: {{ digimon.stage }}</div>
-            <div v-if="digimon.attribute">Attribute: {{ digimon.attribute }}</div>
-            <div v-if="digimon.activity_type">Activity Type: {{ digimon.activity_type }}</div>
+            <div v-if="digimon.stage != 'Egg'"><b>Stage</b>: {{ digimon.stage }}</div>
+            <div v-if="digimon.attribute"><b>Attribute</b>: {{ digimon.attribute }}</div>
+            <div v-if="digimon.activity_type"><b>Activity Type</b>: {{ digimon.activity_type }}</div>
             <div class="" v-if="digimon.stats">
                 <div><b>Stats</b></div>
                 <div>HP: {{ digimon.stats.hp }}</div>
                 <div>BP: {{ digimon.stats.bp }}</div>
                 <div>AP: {{ digimon.stats.ap }}</div>
-                <div>Critial Hit: {{  digimon.stats.critial_hit }} turns</div>
+                <div><b>Critial Hit</b>: {{  digimon.stats.critial_hit }} turns</div>
             </div>
         </div>
 
@@ -182,9 +188,7 @@ export default {
         <div class="field">
             <div class="input-wrap select-wrap">
                 <select v-model="dim_card" class="input">
-                    <option value="dinosaur-roar">Dinosaur Roar</option>
-                    <option value="guilmon-gp">Guilmon GP</option>
-                    <option value="ancient-warriors">Ancient Warriors</option>
+                    <option v-for="all_dim in all_dims" :value="all_dim.file">{{ all_dim.name }}</option>
                 </select>
             </div>
         </div>
@@ -202,7 +206,7 @@ export default {
 .digimon {
     position: absolute;
     left: 8px;
-    bottom: 8px;
+    bottom: 12px;
     width: 64px;
     height: 56px;
     display: flex;

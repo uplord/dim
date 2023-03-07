@@ -23,10 +23,10 @@
         "attribute": "Free",
         "activity_type": "Normal",
         "stats": {
-            "bp": "",
-            "hp": "",
-            "ap": "",
-            "critial_hit": ""
+            "bp": 0,
+            "hp": 0,
+            "ap": 0,
+            "critial_hit": 0
         },
         "images": {
             "name": [
@@ -55,10 +55,10 @@
         "attribute": "Free",
         "activity_type": "Normal",
         "stats": {
-            "bp": "",
-            "hp": "",
-            "ap": "",
-            "critial_hit": ""
+            "bp": 0,
+            "hp": 0,
+            "ap": 0,
+            "critial_hit": 0
         },
         "images": {
             "name": [

@@ -1,0 +1,563 @@
+[
+    {
+        "name": "Egg",
+        "stage": "Egg",
+        "images": {
+            "hatching": [
+                "DIM_2_.PNG",
+                "DIM_3_.PNG",
+                "DIM_4_.PNG",
+                "DIM_5_.PNG",
+                "DIM_6_.PNG",
+                "DIM_7_.PNG",
+                "DIM_8_.PNG",
+                "DIM_9_.PNG"
+            ]
+        }
+    },
+    {
+        "id": "170",
+        "name": "Kiimon",
+        "short_name": "kii",
+        "stage": "I",
+        "attribute": "Free",
+        "activity_type": "Normal",
+        "stats": {
+            "bp": 0,
+            "hp": 0,
+            "ap": 0,
+            "critial_hit": 0
+        },
+        "images": {
+            "name": [
+                "DIM_10_.PNG"
+            ],
+            "default": [
+                "DIM_11_.PNG",
+                "DIM_12_.PNG"
+            ],
+            "walk": [
+                "DIM_13_.PNG"
+            ],
+            "happy": [
+                "DIM_14_.PNG"
+            ],
+            "sleep": [
+                "DIM_15_.PNG"
+            ]
+        }
+    },
+    {
+        "id": "171",
+        "name": "Yaamon",
+        "short_name": "yaa",
+        "stage": "II",
+        "attribute": "Free",
+        "activity_type": "Normal",
+        "stats": {
+            "bp": 0,
+            "hp": 0,
+            "ap": 0,
+            "critial_hit": 0
+        },
+        "images": {
+            "name": [
+                "DIM_16_.PNG"
+            ],
+            "default": [
+                "DIM_17_.PNG",
+                "DIM_18_.PNG"
+            ],
+            "walk": [
+                "DIM_19_.PNG"
+            ],
+            "happy": [
+                "DIM_20_.PNG"
+            ],
+            "sleep": [
+                "DIM_21_.PNG"
+            ],
+            "wallpaper": [
+                "DIM_22_.PNG"
+            ]
+        },
+        "prevo": [
+            {
+                "name": "Kiimon",
+                "requirements": {
+                    "deets": [
+                        "No requirements"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": "172",
+        "name": "Impmon",
+        "short_name": "imp",
+        "stage": "III",
+        "attribute": "Virus",
+        "activity_type": "Normal",
+        "stats": {
+            "bp": "2400",
+            "hp": "1800",
+            "ap": "700",
+            "critial_hit": "3"
+        },
+        "images": {
+            "name": [
+                "DIM_23_.PNG"
+            ],
+            "default": [
+                "DIM_24_.PNG",
+                "DIM_25_.PNG"
+            ],
+            "walk": [
+                "DIM_26_.PNG",
+                "DIM_27_.PNG"
+            ],
+            "run": [
+                "DIM_28_.PNG",
+                "DIM_29_.PNG"
+            ],
+            "train": [
+                "DIM_30_.PNG",
+                "DIM_31_.PNG"
+            ],
+            "happy": [
+                "DIM_32_.PNG"
+            ],
+            "sleep": [
+                "DIM_33_.PNG"
+            ],
+            "attack": [
+                "DIM_34_.PNG",
+                "DIM_35_.PNG"
+            ],
+            "wallpaper": [
+                "DIM_36_.PNG"
+            ]
+        },
+        "prevo": [
+            {
+                "name": "Yaamon",
+                "requirements": {
+                    "deets": [
+                        "No requirements"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": "174",
+        "name": "Wizarmon",
+        "short_name": "wizar",
+        "stage": "IV",
+        "attribute": "Data",
+        "activity_type": "Normal",
+        "stats": {
+            "bp": "2400",
+            "hp": "1600",
+            "ap": "900",
+            "critial_hit": "3"
+        },
+        "images": {
+            "name": [
+                "DIM_37_.PNG"
+            ],
+            "default": [
+                "DIM_38_.PNG",
+                "DIM_39_.PNG"
+            ],
+            "walk": [
+                "DIM_40_.PNG",
+                "DIM_41_.PNG"
+            ],
+            "run": [
+                "DIM_42_.PNG",
+                "DIM_43_.PNG"
+            ],
+            "train": [
+                "DIM_44_.PNG",
+                "DIM_45_.PNG"
+            ],
+            "happy": [
+                "DIM_46_.PNG"
+            ],
+            "sleep": [
+                "DIM_47_.PNG"
+            ],
+            "attack": [
+                "DIM_48_.PNG",
+                "DIM_49_.PNG"
+            ],
+            "wallpaper": [
+                "DIM_50_.PNG"
+            ]
+        },
+        "localized_name": "Wizardmon",
+        "prevo": [
+            {
+                "name": "Ghostmon",
+                "dim": "Dynasty of the Evil",
+                "requirements": {
+                    "deets": [
+                        "8+ Trophies",
+                        "900+ Vital Values",
+                        "5+ Battles"
+                    ]
+                }
+            },
+            {
+                "name": "Impmon",
+                "dim": "Impmon GP",
+                "requirements": {
+                    "deets": [
+                        "10+ Trophies",
+                        "1,300+ Vital Values",
+                        "8+ Battles"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": "177",
+        "name": "Baalmon",
+        "short_name": "baal",
+        "stage": "V",
+        "attribute": "Free",
+        "activity_type": "Normal",
+        "stats": {
+            "bp": "2450",
+            "hp": "2200",
+            "ap": "800",
+            "critial_hit": "3"
+        },
+        "images": {
+            "name": [
+                "DIM_51_.PNG"
+            ],
+            "default": [
+                "DIM_52_.PNG",
+                "DIM_53_.PNG"
+            ],
+            "walk": [
+                "DIM_54_.PNG",
+                "DIM_55_.PNG"
+            ],
+            "run": [
+                "DIM_56_.PNG",
+                "DIM_57_.PNG"
+            ],
+            "train": [
+                "DIM_58_.PNG",
+                "DIM_59_.PNG"
+            ],
+            "happy": [
+                "DIM_60_.PNG"
+            ],
+            "sleep": [
+                "DIM_61_.PNG"
+            ],
+            "attack": [
+                "DIM_62_.PNG",
+                "DIM_63_.PNG"
+            ],
+            "wallpaper": [
+                "DIM_64_.PNG"
+            ]
+        },
+        "localized_name": "Reapmon",
+        "prevo": [
+            {
+                "name": "Wizarmon",
+                "dim": "Dynasty of the Evil, Impmon GP",
+                "requirements": {
+                    "deets": [
+                        "12+ Trophies",
+                        "3,000+ Vital Values",
+                        "15+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Devimon",
+                "dim": "Dynasty of the Evil",
+                "requirements": {
+                    "deets": [
+                        "12+ Trophies",
+                        "3,000+ Vital Values",
+                        "15+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Saberdramon",
+                "dim": "Dynasty of the Evil",
+                "requirements": {
+                    "jogress": "Jogress with Data Adult\r\n"
+                }
+            },
+            {
+                "name": "Bakemon",
+                "dim": "Dynasty of the Evil",
+                "requirements": {
+                    "jogress": "Jogress with Vaccine Adult\r\n"
+                }
+            },
+            {
+                "name": "Wizarmon",
+                "dim": "Impmon GP",
+                "requirements": {
+                    "jogress": "Jogress with Vaccine, Virus or Free Adult\r\n"
+                }
+            }
+        ]
+    },
+    {
+        "id": "185",
+        "name": "Beelzebumon (2010)",
+        "short_name": "beelzebu_2010",
+        "stage": "VI",
+        "attribute": "Virus",
+        "activity_type": "Normal",
+        "stats": {
+            "bp": "4250",
+            "hp": "2640",
+            "ap": "1280",
+            "critial_hit": "3"
+        },
+        "images": {
+            "name": [
+                "DIM_65_.PNG"
+            ],
+            "default": [
+                "DIM_66_.PNG",
+                "DIM_67_.PNG"
+            ],
+            "walk": [
+                "DIM_68_.PNG",
+                "DIM_69_.PNG"
+            ],
+            "run": [
+                "DIM_70_.PNG",
+                "DIM_71_.PNG"
+            ],
+            "train": [
+                "DIM_72_.PNG",
+                "DIM_73_.PNG"
+            ],
+            "happy": [
+                "DIM_74_.PNG"
+            ],
+            "sleep": [
+                "DIM_75_.PNG"
+            ],
+            "attack": [
+                "DIM_76_.PNG",
+                "DIM_77_.PNG"
+            ],
+            "wallpaper": [
+                "DIM_78_.PNG"
+            ]
+        },
+        "localized_name": "Beelzemon (2010)",
+        "prevo": [
+            {
+                "name": "Baalmon",
+                "dim": "Dynasty of the Evil, Impmon GP",
+                "requirements": {
+                    "deets": [
+                        "15+ Trophies",
+                        "4,500+ Vital Values",
+                        "15+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Cyberdramon (2010)",
+                "dim": "Dynasty of the Evil",
+                "requirements": {
+                    "deets": [
+                        "15+ Trophies",
+                        "4,500+ Vital Values",
+                        "15+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Jokermon",
+                "dim": "Dynasty of the Evil",
+                "requirements": {
+                    "deets": [
+                        "15+ Trophies",
+                        "4,500+ Vital Values",
+                        "15+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Pumpmon",
+                "dim": "Dynasty of the Evil",
+                "requirements": {
+                    "jogress": "Jogress with Vaccine or Free Perfect\r\n"
+                }
+            },
+            {
+                "name": "Vamdemon",
+                "dim": "Dynasty of the Evil",
+                "requirements": {
+                    "jogress": "Jogress with Data Perfect\r\n"
+                }
+            },
+            {
+                "name": "Fantomon",
+                "dim": "Dynasty of the Evil",
+                "requirements": {
+                    "jogress": "Jogress with Data Perfect\r\n"
+                }
+            },
+            {
+                "name": "Baalmon",
+                "dim": "Impmon GP",
+                "requirements": {
+                    "jogress": "Jogress with Data Perfect\r\n"
+                }
+            }
+        ]
+    },
+    {
+        "id": "297",
+        "name": "Beelzebumon",
+        "short_name": "beelzebu",
+        "stage": "VI",
+        "attribute": "Virus",
+        "activity_type": "Active",
+        "stats": {
+            "bp": "4675",
+            "hp": "2640",
+            "ap": "1280",
+            "critial_hit": "2"
+        },
+        "images": {
+            "name": [
+                "DIM_79_.PNG"
+            ],
+            "default": [
+                "DIM_80_.PNG",
+                "DIM_81_.PNG"
+            ],
+            "walk": [
+                "DIM_82_.PNG",
+                "DIM_83_.PNG"
+            ],
+            "run": [
+                "DIM_84_.PNG",
+                "DIM_85_.PNG"
+            ],
+            "train": [
+                "DIM_86_.PNG",
+                "DIM_87_.PNG"
+            ],
+            "happy": [
+                "DIM_88_.PNG"
+            ],
+            "sleep": [
+                "DIM_89_.PNG"
+            ],
+            "attack": [
+                "DIM_90_.PNG",
+                "DIM_91_.PNG"
+            ],
+            "wallpaper": [
+                "DIM_92_.PNG"
+            ]
+        },
+        "localized_name": "Beelzemon",
+        "prevo": [
+            {
+                "name": "Baalmon",
+                "requirements": {
+                    "deets": [
+                        "20+ Trophies",
+                        "5,000+ Vital Values",
+                        "20+ Battles",
+                        "70%+ Win Ratio",
+                        "Jogress with Vaccine Perfect"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "id": "298",
+        "name": "Beelzebumon: Blast Mode",
+        "short_name": "beelzebu_b",
+        "stage": "VI",
+        "attribute": "Virus",
+        "activity_type": "Active",
+        "stats": {
+            "bp": "4675",
+            "hp": "3080",
+            "ap": "1440",
+            "critial_hit": "2"
+        },
+        "images": {
+            "name": [
+                "DIM_93_.PNG"
+            ],
+            "default": [
+                "DIM_94_.PNG",
+                "DIM_95_.PNG"
+            ],
+            "walk": [
+                "DIM_96_.PNG",
+                "DIM_97_.PNG"
+            ],
+            "run": [
+                "DIM_98_.PNG",
+                "DIM_99_.PNG"
+            ],
+            "train": [
+                "DIM_100_.PNG",
+                "DIM_101_.PNG"
+            ],
+            "happy": [
+                "DIM_102_.PNG"
+            ],
+            "sleep": [
+                "DIM_103_.PNG"
+            ],
+            "attack": [
+                "DIM_104_.PNG",
+                "DIM_105_.PNG"
+            ],
+            "wallpaper": [
+                "DIM_106_.PNG"
+            ]
+        },
+        "localized_name": "Beelzemon: Blast Mode",
+        "prevo": [
+            {
+                "name": "Baalmon",
+                "requirements": {
+                    "deets": [
+                        "20+ Trophies",
+                        "7,000+ Vital Values",
+                        "25+ Battles",
+                        "70%+ Win Ratio",
+                        "Jogress with Virus Perfect"
+                    ]
+                }
+            }
+        ]
+    }
+]

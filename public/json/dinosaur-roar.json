@@ -16,8 +16,18 @@
         }
     },
     {
+        "id": "187",
+        "name": "Botamon",
         "short_name": "bota",
         "stage": "I",
+        "attribute": "Free",
+        "activity_type": "Normal",
+        "stats": {
+            "bp": 0,
+            "hp": 0,
+            "ap": 0,
+            "critial_hit": 0
+        },
         "images": {
             "name": [
                 "DIM_10_.PNG"
@@ -45,10 +55,10 @@
         "attribute": "Free",
         "activity_type": "Normal",
         "stats": {
-            "bp": "",
-            "hp": "",
-            "ap": "",
-            "critial_hit": ""
+            "bp": 0,
+            "hp": 0,
+            "ap": 0,
+            "critial_hit": 0
         },
         "images": {
             "name": [
@@ -70,7 +80,18 @@
             "wallpaper": [
                 "DIM_22_.PNG"
             ]
-        }
+        },
+        "prevo": [
+            {
+                "name": "Botamon",
+                "dim": "Agumon EX, Mad Black Roar, Dinosaur Roar, Black Roar",
+                "requirements": {
+                    "deets": [
+                        "No requirements"
+                    ]
+                }
+            }
+        ]
     },
     {
         "id": "189",
@@ -120,6 +141,15 @@
             ]
         },
         "prevo": [
+            {
+                "name": "Koromon",
+                "dim": "Agumon EX",
+                "requirements": {
+                    "deets": [
+                        "No requirements"
+                    ]
+                }
+            },
             {
                 "name": "Koromon",
                 "dim": "Dinosaur Roar",
@@ -181,6 +211,15 @@
         "prevo": [
             {
                 "name": "Koromon",
+                "dim": "Mad Black Roar, Black Roar",
+                "requirements": {
+                    "deets": [
+                        "No requirements"
+                    ]
+                }
+            },
+            {
+                "name": "Koromon",
                 "dim": "Dinosaur Roar",
                 "requirements": {
                     "deets": [
@@ -240,7 +279,40 @@
         "prevo": [
             {
                 "name": "Agumon",
+                "dim": "Agumon EX",
+                "requirements": {
+                    "deets": [
+                        "5+ Trophies",
+                        "1,200+ Vital Values",
+                        "8+ Battles"
+                    ]
+                }
+            },
+            {
+                "name": "Agumon (Black)",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "10+ Trophies",
+                        "1,300+ Vital Values",
+                        "8+ Battles"
+                    ]
+                }
+            },
+            {
+                "name": "Agumon",
                 "dim": "Dinosaur Roar",
+                "requirements": {
+                    "deets": [
+                        "10+ Trophies",
+                        "1,300+ Vital Values",
+                        "8+ Battles"
+                    ]
+                }
+            },
+            {
+                "name": "Tinpet",
+                "dim": "Medarot",
                 "requirements": {
                     "deets": [
                         "10+ Trophies",
@@ -299,6 +371,17 @@
             ]
         },
         "prevo": [
+            {
+                "name": "Agumon (Black)",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "0-4 Trophies",
+                        "0-599 Vital Values",
+                        "0-2 Battles"
+                    ]
+                }
+            },
             {
                 "name": "Agumon (Black)",
                 "dim": "Dinosaur Roar",
@@ -373,11 +456,33 @@
         "prevo": [
             {
                 "name": "Agumon (Black)",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "8+ Trophies",
+                        "900+ Vital Values",
+                        "5+ Battles"
+                    ]
+                }
+            },
+            {
+                "name": "Agumon (Black)",
                 "dim": "Dinosaur Roar",
                 "requirements": {
                     "deets": [
                         "10+ Trophies",
                         "1,300+ Vital Values",
+                        "8+ Battles"
+                    ]
+                }
+            },
+            {
+                "name": "Agumon (Black)",
+                "dim": "Black Roar",
+                "requirements": {
+                    "deets": [
+                        "5+ Trophies",
+                        "1,200+ Vital Values",
                         "8+ Battles"
                     ]
                 }
@@ -433,6 +538,17 @@
         },
         "localized_name": "Dark Tyrannomon",
         "prevo": [
+            {
+                "name": "Agumon (Black)",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "5+ Trophies",
+                        "600+ Vital Values",
+                        "3+ Battles"
+                    ]
+                }
+            },
             {
                 "name": "Agumon (Black)",
                 "dim": "Dinosaur Roar",
@@ -506,6 +622,44 @@
         },
         "localized_name": "MetalGreymon",
         "prevo": [
+            {
+                "name": "Greymon",
+                "dim": "Agumon EX, Dinosaur Roar",
+                "requirements": {
+                    "deets": [
+                        "12+ Trophies",
+                        "3,000+ Vital Values",
+                        "15+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Algomon (Adult)",
+                "dim": "Agumon EX",
+                "requirements": {
+                    "deets": [
+                        "12+ Trophies",
+                        "3,000+ Vital Values",
+                        "15+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Coelamon",
+                "dim": "Agumon EX",
+                "requirements": {
+                    "jogress": "Jogress with Vaccine or Free Adult\r\n"
+                }
+            },
+            {
+                "name": "Ogremon",
+                "dim": "Agumon EX",
+                "requirements": {
+                    "jogress": "Jogress with Vaccine or Free Adult\r\n"
+                }
+            },
             {
                 "name": "Dark Tyranomon",
                 "dim": "Dinosaur Roar",
@@ -583,6 +737,44 @@
         },
         "prevo": [
             {
+                "name": "Monochromon",
+                "dim": "Mad Black Roar, Dinosaur Roar",
+                "requirements": {
+                    "deets": [
+                        "10+ Trophies",
+                        "2,500+ Vital Values",
+                        "10+ Battles",
+                        "50%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Dark Tyranomon",
+                "dim": "Mad Black Roar, Dinosaur Roar",
+                "requirements": {
+                    "deets": [
+                        "10+ Trophies",
+                        "2,500+ Vital Values",
+                        "10+ Battles",
+                        "50%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Greymon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "jogress": "Jogress with Virus Adult\r\n"
+                }
+            },
+            {
+                "name": "Greymon (Blue)",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "jogress": "Jogress with Data Adult\r\n"
+                }
+            },
+            {
                 "name": "Greymon",
                 "dim": "Dinosaur Roar",
                 "requirements": {
@@ -658,6 +850,44 @@
         "localized_name": "SkullGreymon",
         "prevo": [
             {
+                "name": "Greymon",
+                "dim": "Mad Black Roar, Dinosaur Roar",
+                "requirements": {
+                    "deets": [
+                        "8+ Trophies",
+                        "2,000+ Vital Values",
+                        "10+ Battles",
+                        "50%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Greymon (Blue)",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "8+ Trophies",
+                        "2,000+ Vital Values",
+                        "10+ Battles",
+                        "50%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Monochromon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "jogress": "Jogress with Free Adult\r\n"
+                }
+            },
+            {
+                "name": "Dark Tyranomon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "jogress": "Jogress with Free Adult\r\n"
+                }
+            },
+            {
                 "name": "Monochromon",
                 "dim": "Dinosaur Roar",
                 "requirements": {
@@ -732,6 +962,56 @@
         },
         "localized_name": "MetalGreymon",
         "prevo": [
+            {
+                "name": "Greymon (Blue)",
+                "dim": "Dinosaur Roar, Black Roar",
+                "requirements": {
+                    "deets": [
+                        "12+ Trophies",
+                        "3,000+ Vital Values",
+                        "15+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Greymon (Blue)",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "10+ Trophies",
+                        "2,500+ Vital Values",
+                        "10+ Battles",
+                        "50%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Greymon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "10+ Trophies",
+                        "2,500+ Vital Values",
+                        "10+ Battles",
+                        "50%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Monochromon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "jogress": "Jogress with Virus Adult\r\n"
+                }
+            },
+            {
+                "name": "Dark Tyranomon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "jogress": "Jogress with Data Adult\r\n"
+                }
+            },
             {
                 "name": "Greymon",
                 "dim": "Dinosaur Roar",
@@ -809,6 +1089,80 @@
         },
         "localized_name": "WarGreymon",
         "prevo": [
+            {
+                "name": "Metal Greymon (Vaccine)",
+                "dim": "Agumon EX",
+                "requirements": {
+                    "deets": [
+                        "10+ Trophies",
+                        "5,000+ Vital Values",
+                        "20+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Andromon",
+                "dim": "Agumon EX",
+                "requirements": {
+                    "deets": [
+                        "20+ Trophies",
+                        "5,000+ Vital Values",
+                        "20+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Anomalocarimon",
+                "dim": "Agumon EX",
+                "requirements": {
+                    "deets": [
+                        "20+ Trophies",
+                        "5,000+ Vital Values",
+                        "20+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Metal Tyranomon",
+                "dim": "Agumon EX",
+                "requirements": {
+                    "deets": [
+                        "20+ Trophies",
+                        "5,000+ Vital Values",
+                        "20+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Mamemon",
+                "dim": "Agumon EX",
+                "requirements": {
+                    "jogress": "Jogress with Vaccine or Free Perfect\r\n"
+                }
+            },
+            {
+                "name": "Neo Devimon",
+                "dim": "Agumon EX",
+                "requirements": {
+                    "jogress": "Jogress with Vaccine or Free Perfect\r\n"
+                }
+            },
+            {
+                "name": "Metal Greymon (Virus)",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "10+ Trophies",
+                        "4,500+ Vital Values",
+                        "15+ Battles",
+                        "50%+ Win Ratio"
+                    ]
+                }
+            },
             {
                 "name": "Metal Greymon (Vaccine)",
                 "dim": "Dinosaur Roar",
@@ -891,6 +1245,64 @@
         },
         "localized_name": "VictoryGreymon",
         "prevo": [
+            {
+                "name": "Metal Greymon: Alterous Mode",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "10+ Trophies",
+                        "4,500+ Vital Values",
+                        "15+ Battles",
+                        "50%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Ex-Tyranomon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "10+ Trophies",
+                        "4,500+ Vital Values",
+                        "15+ Battles",
+                        "50%+ Win Ratio",
+                        "Jogress with Data or Free Perfect"
+                    ]
+                }
+            },
+            {
+                "name": "Vermillimon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "10+ Trophies",
+                        "4,500+ Vital Values",
+                        "15+ Battles",
+                        "50%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Mametyramon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "jogress": "Jogress with Virus Perfect\r\n"
+                }
+            },
+            {
+                "name": "Skull Greymon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "jogress": "Jogress with Data Perfect\r\n"
+                }
+            },
+            {
+                "name": "Metal Greymon (Virus)",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "jogress": "Jogress with Data Perfect\r\n"
+                }
+            },
             {
                 "name": "Vermillimon",
                 "dim": "Dinosaur Roar",
@@ -986,6 +1398,56 @@
         "localized_name": "BlackWarGreymon",
         "prevo": [
             {
+                "name": "Metal Greymon (Virus)",
+                "dim": "Mad Black Roar, Dinosaur Roar",
+                "requirements": {
+                    "deets": [
+                        "15+ Trophies",
+                        "4,500+ Vital Values",
+                        "15+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Skull Greymon",
+                "dim": "Mad Black Roar, Dinosaur Roar",
+                "requirements": {
+                    "deets": [
+                        "15+ Trophies",
+                        "4,500+ Vital Values",
+                        "15+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Ex-Tyranomon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "15+ Trophies",
+                        "4,500+ Vital Values",
+                        "15+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Metal Greymon: Alterous Mode",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "jogress": "Jogress with Data or Free Perfect\r\n"
+                }
+            },
+            {
+                "name": "Mametyramon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "jogress": "Jogress with Vaccine or Free Perfect\r\n"
+                }
+            },
+            {
                 "name": "Metal Greymon (Vaccine)",
                 "dim": "Dinosaur Roar",
                 "requirements": {
@@ -997,6 +1459,18 @@
                 "dim": "Dinosaur Roar",
                 "requirements": {
                     "jogress": "Jogress with Vaccine, Virus or Free Perfect\r\n"
+                }
+            },
+            {
+                "name": "Metal Greymon (Virus)",
+                "dim": "Black Roar",
+                "requirements": {
+                    "deets": [
+                        "20+ Trophies",
+                        "5,000+ Vital Values",
+                        "20+ Battles",
+                        "70%+ Win Ratio"
+                    ]
                 }
             }
         ]
@@ -1052,7 +1526,33 @@
         "prevo": [
             {
                 "name": "War Greymon",
+                "dim": "Agumon EX",
+                "requirements": {
+                    "jogress": "Jogress with Metal Garurumon  from the Gabumon Dim\r\n"
+                }
+            },
+            {
+                "name": "Metal Garurumon",
+                "dim": "Gabumon EX",
+                "requirements": {
+                    "jogress": "Jogress with War Greymon  from the Agumon Dim\r\n"
+                }
+            },
+            {
+                "name": "War Greymon",
                 "dim": "Dinosaur Roar",
+                "requirements": {
+                    "deets": [
+                        "30+ Trophies",
+                        "8,500+ Vital Values",
+                        "30+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Metal Garurumon",
+                "dim": "Wolf Howl",
                 "requirements": {
                     "deets": [
                         "30+ Trophies",
@@ -1115,7 +1615,172 @@
         "prevo": [
             {
                 "name": "Black War Greymon",
+                "dim": "Mad Black Roar, Black Roar",
+                "requirements": {
+                    "jogress": "Jogress with Metal Garurumon (Black)  from the True Shadow Howl Dim\r\n"
+                }
+            },
+            {
+                "name": "Metal Garurumon (Black)",
+                "dim": "True Shadow Howl, Shadow Howl",
+                "requirements": {
+                    "jogress": "Jogress with Black War Greymon  from the Mad Black Roar Dim\r\n"
+                }
+            },
+            {
+                "name": "Metal Greymon: Alterous Mode",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "Stage 15 cleared",
+                        "20+ Trophies",
+                        "7,000+ Vital Values",
+                        "25+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Mametyramon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "Stage 15 cleared",
+                        "20+ Trophies",
+                        "7,000+ Vital Values",
+                        "25+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Metal Greymon (Virus)",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "Stage 15 cleared",
+                        "20+ Trophies",
+                        "7,000+ Vital Values",
+                        "25+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Ex-Tyranomon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "Stage 15 cleared",
+                        "Jogress with Virus Perfect"
+                    ]
+                }
+            },
+            {
+                "name": "Vermillimon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "Stage 15 cleared",
+                        "Jogress with Virus Perfect"
+                    ]
+                }
+            },
+            {
+                "name": "Skull Greymon",
+                "dim": "Mad Black Roar",
+                "requirements": {
+                    "deets": [
+                        "Stage 15 cleared",
+                        "Jogress with Vaccine or Free Perfect"
+                    ]
+                }
+            },
+            {
+                "name": "Were Garurumon: Saggitarius Mode",
+                "dim": "True Shadow Howl",
+                "requirements": {
+                    "deets": [
+                        "Stage 15 cleared",
+                        "20+ Trophies",
+                        "7,000+ Vital Values",
+                        "25+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Were Garurumon (Black)",
+                "dim": "True Shadow Howl",
+                "requirements": {
+                    "deets": [
+                        "Stage 15 cleared",
+                        "20+ Trophies",
+                        "7,000+ Vital Values",
+                        "25+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Jaeger Dorulumon",
+                "dim": "True Shadow Howl",
+                "requirements": {
+                    "deets": [
+                        "Stage 15 cleared",
+                        "20+ Trophies",
+                        "7,000+ Vital Values",
+                        "25+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Cerberumon",
+                "dim": "True Shadow Howl",
+                "requirements": {
+                    "deets": [
+                        "Stage 15 cleared",
+                        "Jogress with Virus Perfect"
+                    ]
+                }
+            },
+            {
+                "name": "Rhinomon",
+                "dim": "True Shadow Howl",
+                "requirements": {
+                    "deets": [
+                        "Stage 15 cleared",
+                        "Jogress with Vaccine or Virus Perfect"
+                    ]
+                }
+            },
+            {
+                "name": "Pandamon",
+                "dim": "True Shadow Howl",
+                "requirements": {
+                    "deets": [
+                        "Stage 15 cleared",
+                        "Jogress with Virus Perfect"
+                    ]
+                }
+            },
+            {
+                "name": "Black War Greymon",
                 "dim": "Dinosaur Roar",
+                "requirements": {
+                    "deets": [
+                        "Stage 15 cleared",
+                        "30+ Trophies",
+                        "8,500+ Vital Values",
+                        "30+ Battles",
+                        "70%+ Win Ratio"
+                    ]
+                }
+            },
+            {
+                "name": "Metal Garurumon (Black)",
+                "dim": "Wolf Howl",
                 "requirements": {
                     "deets": [
                         "Stage 15 cleared",
