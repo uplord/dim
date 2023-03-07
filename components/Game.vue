@@ -33,9 +33,11 @@ export default {
     methods: {
 
         async loadDim() {
+            
             axios
                 .get('../json/' + this.dim_card + '.json')
                 .then(response => {
+                    this.images = []
                     this.dim = response.data
 
                     // Load all images
@@ -279,6 +281,7 @@ export default {
 
 .image-wrap {
     height: 160px;
+    width: 80px;
     margin: 0 0 16px;
 }
 .background {
