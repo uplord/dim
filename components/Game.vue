@@ -12,7 +12,8 @@ export default {
             digimon: {},
             current_digimon: 0,
             prev_digimon: '',
-            images: {}
+            images: {},
+            wallpaper: ''
         }
     },
     computed: {
@@ -38,6 +39,8 @@ export default {
                     this.dim = response.data
 
                     // Load all images
+
+                    this.wallpaper = this.newImage('../images/' + this.dim_card + '/DIM_1_.png').src
 
                     for (let i = 0; i < this.dim.length; i++) {
                         const images = {}
@@ -182,7 +185,7 @@ export default {
 
         <div class="image-wrap">
         <div class="background" v-if="digimon.images">
-            <img :src="'../images/' + dim_card + '/DIM_1_.PNG'" alt="" />
+            <img :src="wallpaper" alt="" />
 
             <div class="digimon default" v-if="frame == 'default' && digimon.images.default">
                 <img :src="images[current_digimon].default_1.src" alt="" class="frame1" />
