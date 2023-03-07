@@ -97,4 +97,10 @@ form {
     padding: 8px 16px;
     border: 1px solid #000;
 }
+
+hr {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid #000;
+}
 </style>

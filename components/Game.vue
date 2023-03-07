@@ -257,6 +257,8 @@ export default {
 
         <form>
 
+            <hr>
+
         <div class="button-group" v-if="digimon.images && frame != 'wallpaper'">
             <div class="button" @click="frame = 'default'" :class="{'active': frame == 'default'}" v-if="digimon.images.default">Default</div>
             <div class="button" @click="frame = 'walk'" :class="{'active': frame == 'walk'}" v-if="digimon.images.walk">Walk</div>
@@ -269,10 +271,14 @@ export default {
             <div class="button" @click="frame = 'hatch'" v-if="digimon.images.hatching && frame != 'hatch'">Hatch</div>
         </div>
 
+        <hr v-if="frame != 'hatch' && frame != 'egg' && frame != 'wallpaper'">
+
         <div class="button-group" v-if="frame != 'hatch' && frame != 'egg' && frame != 'wallpaper'">
             <div class="button" @click="current_digimon--" v-if="frame != 'hatch' && frame != 'egg'">Down</div>
             <div class="button" @click="current_digimon++" v-if="current_digimon + 1 < dim.length && frame != 'hatch' && frame != 'egg'">Up</div>
         </div>
+
+
 
         </form>
     </div>
