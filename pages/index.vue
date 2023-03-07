@@ -16,7 +16,7 @@ export default {
     </section>
 </template>
 
-<style>
+<style lang="less">
 * {
     box-sizing: border-box;
 }
@@ -70,6 +70,14 @@ form {
     background: #000;
     color: #FFF;
     padding: 8px 16px;
+
+    &.active {
+        background: red;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .input {

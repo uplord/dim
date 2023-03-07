@@ -106,27 +106,6 @@ export default {
             if (this.digimon.images.wallpaper == undefined && this.current_digimon == 1) {
                 this.frame = 'default'
             }
-
-            /*
-            this.images.default_1 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.default[0])
-            this.images.default_2 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.default[1])
-
-            this.images.walk_1 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.walk[0])
-            this.images.walk_2 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.walk[1])
-
-            this.images.run_1 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.run[0])
-            this.images.run_2 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.run[1])
-
-            this.images.train_1 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.train[0])
-            this.images.train_2 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.train[1])
-
-            this.images.happy = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.happy[0])
-            this.images.sleep = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.sleep[0])
-            this.images.attack_1 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.attack[0])
-            this.images.attack_2 = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.attack[1])
-
-            this.images.wallpaper = this.newImage('../images/' + this.dim_card + '/' + this.digimon.images.wallpaper[0])
-            */
         },
         newImage: function (url) {
             const image = new Image()
@@ -193,6 +172,15 @@ export default {
 
 <template>
     <div class="" v-if="digimon">
+        <div class="field">
+            <div class="input-wrap select-wrap">
+                <select v-model="dim_card" class="input">
+                    <option v-for="all_dim in all_dims" :value="all_dim.file">{{ all_dim.name }}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="image-wrap">
         <div class="background" v-if="digimon.images">
             <img :src="'../images/' + dim_card + '/DIM_1_.PNG'" alt="" />
 
@@ -240,6 +228,7 @@ export default {
             </div>
             
         </div>
+        </div>
 
         <div class="info">
             <div><b>{{ digimon.name }}</b></div>
@@ -258,14 +247,14 @@ export default {
         <form>
 
         <div class="button-group" v-if="digimon.images">
-            <div class="button" @click="frame = 'default'" v-if="digimon.images.default">Default</div>
-            <div class="button" @click="frame = 'walk'" v-if="digimon.images.walk">Walk</div>
-            <div class="button" @click="frame = 'run'" v-if="digimon.images.run">Run</div>
-            <div class="button" @click="frame = 'train'" v-if="digimon.images.train">Train</div>
-            <div class="button" @click="frame = 'happy'" v-if="digimon.images.happy">Happy</div>
-            <div class="button" @click="frame = 'sleep'" v-if="digimon.images.sleep">Sleep</div>
-            <div class="button" @click="frame = 'attack'" v-if="digimon.images.attack">Attack</div>
-            <div class="button" @click="frame = 'wallpaper'" v-if="digimon.images.wallpaper">Wallpaper</div>
+            <div class="button" @click="frame = 'default'" :class="{'active': frame == 'default'}" v-if="digimon.images.default">Default</div>
+            <div class="button" @click="frame = 'walk'" :class="{'active': frame == 'walk'}" v-if="digimon.images.walk">Walk</div>
+            <div class="button" @click="frame = 'run'" :class="{'active': frame == 'run'}" v-if="digimon.images.run">Run</div>
+            <div class="button" @click="frame = 'train'" :class="{'active': frame == 'train'}" v-if="digimon.images.train">Train</div>
+            <div class="button" @click="frame = 'happy'" :class="{'active': frame == 'happy'}" v-if="digimon.images.happy">Happy</div>
+            <div class="button" @click="frame = 'sleep'" :class="{'active': frame == 'sleep'}" v-if="digimon.images.sleep">Sleep</div>
+            <div class="button" @click="frame = 'attack'" :class="{'active': frame == 'attack'}" v-if="digimon.images.attack">Attack</div>
+            <div class="button" @click="frame = 'wallpaper'" :class="{'active': frame == 'wallpaper'}" v-if="digimon.images.wallpaper">Wallpaper</div>
 
             <div class="button" @click="frame = 'hatch'" v-if="digimon.images.hatching">Hatch</div>
         </div>
@@ -275,22 +264,23 @@ export default {
             <div class="button" @click="current_digimon++" v-if="current_digimon + 1 < dim.length && frame != 'hatch' && frame != 'egg'">Up</div>
         </div>
 
-        <div class="field">
-            <div class="input-wrap select-wrap">
-                <select v-model="dim_card" class="input">
-                    <option v-for="all_dim in all_dims" :value="all_dim.file">{{ all_dim.name }}</option>
-                </select>
-            </div>
-        </div>
-
         </form>
     </div>
 </template>
 
 <style lang="less">
+
+.field {
+    margin: 0 0 16px;
+}
+
+.image-wrap {
+    height: 160px;
+    margin: 0 0 16px;
+}
 .background {
     position: relative;
-    margin: 0 0 16px;
+    height: 100%;
 }
 
 .digimon {
