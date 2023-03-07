@@ -55,6 +55,7 @@ form {
     flex-wrap: wrap;
     flex-direction: column;
     gap: 16px;
+    margin: 0 0 16px;
 }
 
 .button-group {
@@ -73,6 +74,7 @@ form {
     color: #FFF;
     padding: 0 24px;
     border-radius: 3px;
+    border: 0;
 
     @media (max-width: 640px) {
         font-size: 16px;
@@ -81,6 +83,15 @@ form {
 
     &.active {
         background: red;
+    }
+
+    &[disabled] {
+        background: #ddd;
+        color: #888;
+
+        &:hover {
+            cursor: default;
+        }
     }
 
     &:hover {

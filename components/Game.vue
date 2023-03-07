@@ -183,13 +183,25 @@ export default {
 
 <template>
     <div class="" v-if="digimon">
-        <div class="field">
-            <div class="input-wrap select-wrap">
-                <select v-model="dim_card" class="input">
-                    <option v-for="all_dim in all_dims" :value="all_dim.file">{{ all_dim.name }}</option>
-                </select>
+
+        <form>
+            <div class="field">
+                <div class="input-wrap select-wrap">
+                    <select v-model="dim_card" class="input">
+                        <option v-for="all_dim in all_dims" :value="all_dim.file">{{ all_dim.name }}</option>
+                    </select>
+                </div>
             </div>
-        </div>
+
+            <div class="button-group" v-if="digimon.images">
+                <button type="button" class="button" @click="frame = 'hatch'" v-if="digimon.images && digimon.images.hatching && (frame == 'hatch' || frame == 'egg')" :disabled="frame == 'hatch'">Hatch</button>
+                <button type="button" class="button" @click="current_digimon--" v-if="frame != 'hatch' && frame != 'egg'" :disabled="frame == 'wallpaper'">Down</button>
+                <button type="button" class="button" @click="current_digimon++" v-if="current_digimon + 1 < dim.length && frame != 'hatch' && frame != 'egg'" :disabled="frame == 'wallpaper'">Up</button>
+            </div>
+
+            <hr>
+
+        </form>
 
         <div class="image-wrap">
         <div class="background" v-if="digimon.images">
@@ -243,7 +255,7 @@ export default {
 
         <div class="info">
             <div><b>{{ digimon.name }}</b></div>
-            <div v-if="digimon.stage != 'Egg'"><b>Stage</b>: {{ digimon.stage }}</div>
+            <div v-if="digimon.stage != 'Egg' && digimon.stage"><b>Stage</b>: {{ digimon.stage }}</div>
             <div v-if="digimon.attribute"><b>Attribute</b>: {{ digimon.attribute }}</div>
             <div v-if="digimon.activity_type"><b>Activity Type</b>: {{ digimon.activity_type }}</div>
             <div class="" v-if="digimon.stats && digimon.stats.hp != 0">
@@ -259,23 +271,14 @@ export default {
 
             <hr>
 
-        <div class="button-group" v-if="digimon.images && frame != 'wallpaper'">
-            <div class="button" @click="frame = 'default'" :class="{'active': frame == 'default'}" v-if="digimon.images.default">Default</div>
-            <div class="button" @click="frame = 'walk'" :class="{'active': frame == 'walk'}" v-if="digimon.images.walk">Walk</div>
-            <div class="button" @click="frame = 'run'" :class="{'active': frame == 'run'}" v-if="digimon.images.run">Run</div>
-            <div class="button" @click="frame = 'train'" :class="{'active': frame == 'train'}" v-if="digimon.images.train">Train</div>
-            <div class="button" @click="frame = 'happy'" :class="{'active': frame == 'happy'}" v-if="digimon.images.happy">Happy</div>
-            <div class="button" @click="frame = 'sleep'" :class="{'active': frame == 'sleep'}" v-if="digimon.images.sleep">Sleep</div>
-            <div class="button" @click="frame = 'attack'" :class="{'active': frame == 'attack'}" v-if="digimon.images.attack">Attack</div>
-
-            <div class="button" @click="frame = 'hatch'" v-if="digimon.images.hatching && frame != 'hatch'">Hatch</div>
-        </div>
-
-        <hr v-if="frame != 'hatch' && frame != 'egg' && frame != 'wallpaper'">
-
-        <div class="button-group" v-if="frame != 'hatch' && frame != 'egg' && frame != 'wallpaper'">
-            <div class="button" @click="current_digimon--" v-if="frame != 'hatch' && frame != 'egg'">Down</div>
-            <div class="button" @click="current_digimon++" v-if="current_digimon + 1 < dim.length && frame != 'hatch' && frame != 'egg'">Up</div>
+        <div class="button-group" v-if="digimon.images">
+            <button type="button" class="button" @click="frame = 'default'" :class="{'active': frame == 'default'}" v-if="digimon.images.default" :disabled="frame == 'wallpaper'">Default</button>
+            <button type="button" class="button" @click="frame = 'walk'" :class="{'active': frame == 'walk'}" v-if="digimon.images.walk" :disabled="frame == 'wallpaper'">Walk</button>
+            <button type="button" class="button" @click="frame = 'run'" :class="{'active': frame == 'run'}" v-if="digimon.images.run" :disabled="frame == 'wallpaper'">Run</button>
+            <button type="button" class="button" @click="frame = 'train'" :class="{'active': frame == 'train'}" v-if="digimon.images.train" :disabled="frame == 'wallpaper'">Train</button>
+            <button type="button" class="button" @click="frame = 'happy'" :class="{'active': frame == 'happy'}" v-if="digimon.images.happy" :disabled="frame == 'wallpaper'">Happy</button>
+            <button type="button" class="button" @click="frame = 'sleep'" :class="{'active': frame == 'sleep'}" v-if="digimon.images.sleep" :disabled="frame == 'wallpaper'">Sleep</button>
+            <button type="button" class="button" @click="frame = 'attack'" :class="{'active': frame == 'attack'}" v-if="digimon.images.attack" :disabled="frame == 'wallpaper'">Attack</button>
         </div>
 
 
@@ -286,14 +289,11 @@ export default {
 
 <style lang="less">
 
-.field {
-    margin: 0 0 16px;
-}
-
 .image-wrap {
     height: 160px;
     width: 80px;
     margin: 0 0 16px;
+    background-color: #EEE;
 }
 .background {
     position: relative;
