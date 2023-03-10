@@ -14,7 +14,11 @@ export default {
             prev_digimon: '',
             images: {},
             wallpaper: '',
-            timer: ''
+            timer: '',
+            animation_frame: 1,
+            animation_timer: 500,
+            animation: '',
+            max_frames: 2
         }
     },
     computed: {
@@ -34,6 +38,8 @@ export default {
     methods: {
 
         async loadDim() {
+
+            var vm = this
 
             clearTimeout(this.timer)
 
@@ -93,6 +99,7 @@ export default {
                         }
 
                         if (this.dim[i].images.hatching) {
+                            console.log(this.dim[i].images.hatching)
                             images.hatch_1 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.hatching[0])
                             images.hatch_2 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.hatching[1])
                             images.hatch_3 = this.newImage('../images/' + this.dim_card + '/' + this.dim[i].images.hatching[2])
@@ -113,10 +120,39 @@ export default {
                 })
         },
         loadDigimon: function() {
+            var vm = this
+
             this.digimon = this.dim[this.current_digimon]
             if (this.digimon.images.wallpaper == undefined && this.current_digimon == 1) {
                 this.frame = 'default'
             }
+
+            vm.timerInterval()
+        },
+        timerInterval: function() {
+            var vm = this
+
+            clearInterval(vm.animation)
+            vm.animation = setInterval(function() {
+
+                if (vm.animation_frame != vm.max_frames) {
+                    vm.animation_frame++
+                } else {
+                    vm.animation_frame = 1
+                    if ((vm.digimon.stage == 'I' || vm.digimon.stage == 'II') && vm.frame == 'walk') {
+                        vm.frame = 'default'
+                        vm.max_frames = 2
+                    } else {
+                        vm.max_frames = 2
+                    }
+                    if (vm.frame == 'happy' || vm.frame == 'attack' || vm.frame == 'wallpaper') {
+                        vm.frame = 'default'
+                    }
+                    if (vm.frame == 'hatch') {
+                        vm.current_digimon++
+                    }
+                }
+            }, vm.animation_timer);
         },
         newImage: function (url) {
             const image = new Image()
@@ -131,7 +167,6 @@ export default {
                     this.frame = 'egg'
                 } else {
                     if (this.prev_digimon < val) {
-                        console.log(222)
                         this.frame = 'wallpaper'
                     } else {
                         this.frame = 'default'
@@ -154,27 +189,22 @@ export default {
             handler: function (val) {
                 var vm = this
 
+                //clearInterval(vm.animation)
+                vm.animation_frame = 1
+                vm.animation_timer = 500
+
                 if (val == 'hatch') {
-                    vm.timer = setTimeout(function() {
-                        vm.current_digimon++
-                    }, 1500);
+                    vm.max_frames = 8
                 } else if (val == 'happy') {
-                    vm.timer = setTimeout(function() {
-                        vm.frame = 'default'
-                    }, 500);
-                } else if (val == 'train') {
-                    vm.timer = setTimeout(function() {
-                        vm.frame = 'default'
-                    }, 1000);
-                } else if (val == 'attack') {
-                    vm.timer = setTimeout(function() {
-                        vm.frame = 'default'
-                    }, 1000);
-                } else if (val == 'wallpaper') {
-                    vm.timer = setTimeout(function() {
-                        vm.frame = 'default'
-                    }, 1000);
+                    vm.max_frames = 1
+                    vm.animation_timer = 500
+                } else if ((vm.digimon.stage == 'I' || vm.digimon.stage == 'II') && val == 'walk') {
+                    vm.max_frames = 1
+                } else {
+                    vm.max_frames = 2
                 }
+
+                vm.timerInterval()
             },
             deep: true
         }
@@ -209,21 +239,21 @@ export default {
             <img :src="wallpaper" alt="" />
 
             <div class="digimon default" v-if="frame == 'default' && digimon.images.default">
-                <img :src="images[current_digimon].default_1.src" alt="" class="frame1" />
-                <img :src="images[current_digimon].default_2.src" alt="" class="frame2" v-if="digimon.images.default[1]" />
+                <img :src="images[current_digimon].default_1.src" alt="" class="frame1" v-if="animation_frame == 1" />
+                <img :src="images[current_digimon].default_2.src" alt="" class="frame2" v-if="digimon.images.default[1] && animation_frame == 2" />
             </div>
 
             <div class="digimon walk" v-if="frame == 'walk' && digimon.images.walk">
-                <img :src="images[current_digimon].walk_1.src" alt="" :class="{ 'frame1': digimon.images.walk[1] }" />
-                <img :src="images[current_digimon].walk_2.src" alt="" class="frame2" v-if="digimon.images.walk[1]" />
+                <img :src="images[current_digimon].walk_1.src" alt="" :class="{ 'frame1': digimon.images.walk[1] }" v-if="animation_frame == 1" />
+                <img :src="images[current_digimon].walk_2.src" alt="" class="frame2" v-if="digimon.images.walk[1] && animation_frame == 2" />
             </div>
             <div class="digimon run" v-if="frame == 'run' && digimon.images.run">
-                <img :src="images[current_digimon].run_1.src" alt="" :class="{ 'frame1': digimon.images.run[1] }" />
-                <img :src="images[current_digimon].run_2.src" alt="" class="frame2" v-if="digimon.images.run[1]" />
+                <img :src="images[current_digimon].run_1.src" alt="" :class="{ 'frame1': digimon.images.run[1] }" v-if="animation_frame == 1" />
+                <img :src="images[current_digimon].run_2.src" alt="" class="frame2" v-if="digimon.images.run[1] && animation_frame == 2" />
             </div>
             <div class="digimon train" v-if="frame == 'train' && digimon.images.train">
-                <img :src="images[current_digimon].train_1.src" alt="" class="frame1" />
-                <img :src="images[current_digimon].train_2.src" alt="" class="frame2" v-if="digimon.images.train[1]" />
+                <img :src="images[current_digimon].train_1.src" alt="" class="frame1" v-if="animation_frame == 1" />
+                <img :src="images[current_digimon].train_2.src" alt="" class="frame2" v-if="digimon.images.train[1] && animation_frame == 2" />
             </div>
             <div class="digimon happy" v-if="frame == 'happy' && digimon.images.happy">
                 <img :src="images[current_digimon].happy.src" alt="" />
@@ -232,19 +262,19 @@ export default {
                 <img :src="images[current_digimon].sleep.src" alt="" />
             </div>
             <div class="digimon attack" v-if="frame == 'attack' && digimon.images.attack">
-                <img :src="images[current_digimon].attack_1.src" alt="" class="frame1" />
-                <img :src="images[current_digimon].attack_2.src" alt="" class="frame2" v-if="digimon.images.attack[1]" />
+                <img :src="images[current_digimon].attack_1.src" alt="" class="frame1" v-if="animation_frame == 1" />
+                <img :src="images[current_digimon].attack_2.src" alt="" class="frame2" v-if="digimon.images.attack[1] && animation_frame == 2" />
             </div>
 
-            <div class="digimon hatch" v-if="(frame == 'egg' || frame == 'hatch') && digimon.images.hatching" :class="{'start': frame == 'hatch'}">
-                <img :src="images[current_digimon].hatch_1.src" alt="" class="frame1" />
-                <img :src="images[current_digimon].hatch_2.src" alt="" class="frame2" />
-                <img :src="images[current_digimon].hatch_3.src" alt="" class="frame3" />
-                <img :src="images[current_digimon].hatch_4.src" alt="" class="frame4" />
-                <img :src="images[current_digimon].hatch_5.src" alt="" class="frame5" />
-                <img :src="images[current_digimon].hatch_6.src" alt="" class="frame6" />
-                <img :src="images[current_digimon].hatch_7.src" alt="" class="frame7" />
-                <img :src="images[current_digimon].hatch_8.src" alt="" class="frame8" />
+            <div class="digimon hatch" v-if="(frame == 'egg' || frame == 'hatch') && images[current_digimon]" :class="{'start': frame == 'hatch'}">
+                <img :src="images[current_digimon].hatch_1.src" alt="" class="frame1" v-if="animation_frame == 1" />
+                <img :src="images[current_digimon].hatch_2.src" alt="" class="frame2" v-if="animation_frame == 2" />
+                <img :src="images[current_digimon].hatch_3.src" alt="" class="frame3" v-if="animation_frame == 3" />
+                <img :src="images[current_digimon].hatch_4.src" alt="" class="frame4" v-if="animation_frame == 4" />
+                <img :src="images[current_digimon].hatch_5.src" alt="" class="frame5" v-if="animation_frame == 5" />
+                <img :src="images[current_digimon].hatch_6.src" alt="" class="frame6" v-if="animation_frame == 6" />
+                <img :src="images[current_digimon].hatch_7.src" alt="" class="frame7" v-if="animation_frame == 7" />
+                <img :src="images[current_digimon].hatch_8.src" alt="" class="frame8" v-if="animation_frame == 8" />
             </div>
 
             <div class="wallpaper" v-if="frame == 'wallpaper' && digimon.images.wallpaper">
@@ -291,7 +321,6 @@ export default {
 <style lang="less">
 
 .image-wrap {
-    height: 160px;
     width: 80px;
     margin: 0 0 16px;
     background-color: #EEE;
@@ -299,6 +328,11 @@ export default {
 .background {
     position: relative;
     height: 100%;
+
+    > img {
+        height: 160px;
+        width: 80px;
+    }
 }
 
 .digimon {
@@ -316,6 +350,7 @@ export default {
     position: absolute;
 }
 
+/*
 .frame1 {
     animation: frame-animation-1 1s infinite;
 }
@@ -376,6 +411,7 @@ export default {
         animation-delay: 0.875s;
     }
 }
+*/
 
 .wallpaper {
     position: absolute;
